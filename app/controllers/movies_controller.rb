@@ -11,6 +11,9 @@ class MoviesController < ApplicationController
     @all_ratings = ['G','PG','PG-13','R']
     @ratings_to_show = params[:ratings]&.keys || session[:ratings] || @all_ratings
     @movies = Movie.with_ratings(@ratings_to_show)
+    @header_background = (params[:titled_sort] == 'title') ? 'hilite bg-warning' : ''
+    @date_header_background = (params[:date_sort] == 'date') ? 'hilite bg-warning' : ''
+    
  
     #Movie.with_ratings()
   end
