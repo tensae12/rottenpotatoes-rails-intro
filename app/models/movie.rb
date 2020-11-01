@@ -7,6 +7,7 @@ class Movie < ActiveRecord::Base
   end
   def self.with_ratings ratings_list
     Movie.where(rating: ratings_list)
+    #----
   end
   
 end
